@@ -54,17 +54,6 @@ def irc():
 						leavechan(channel);
 						joinchan(chan);
 						channel = chan.strip(' ');
-			elif ircmsg.find("quit")!= -1:
-				exit()
-			elif ircmsg.find("master") != -1:
-				sendmsg(channel, "Hello there! Duality is my Master.");
-			elif ircmsg.find("say name") != -1:
-				sendmsg(channel, "Hello all! my name is Artie.");
-			elif ircmsg.find("say: ") != -1:
-				chatmsg = ircmsg.split(':!')[1][len("say: "):]#extract what the message is.
-				sendmsg(channel, chatmsg);
-			elif ircmsg.find("42") != -1:
-				sendmsg(channel, 'Douglas Adams - "42 is a nice number that you can take home and introduce to your family."');
 		else:
 			send = ircmsg.split(' :',1)[1]
 			print "Pm: "+getUserName(ircmsg)+" >>",send
